@@ -1,10 +1,16 @@
 header {
-    .asdf {
-        background-color: red;
+    .menu-opener {
+        display: flex;
+        justify-content: right;
+
+        svg {
+            height: 40px;
+            width: 40px;
+        }
     }
 
     div {
         padding: 10px;
-        color: $sea-blue;
+        color: $deep-teal;
     }
 }

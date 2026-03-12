@@ -5,7 +5,7 @@
                 <IconHamburgerList></IconHamburgerList>
             </div>
             <div class="menu-wrapper" v-show="isMenuOpen">
-                <div>Home</div>
+                <RouterLink class="info-bar-button" to="/">Home</RouterLink>
                 <div>About Us</div>
                 <div>Programs</div>
                 <div>Services</div>
@@ -30,9 +30,7 @@ import { ref } from 'vue';
 const isMenuOpen = ref(false);
 
 function menuOpener() {
-    console.log('Menu Open? ', isMenuOpen.value);
     isMenuOpen.value = !isMenuOpen.value;
-    console.log('Menu Open? ', isMenuOpen.value);
 }
 </script>
 
