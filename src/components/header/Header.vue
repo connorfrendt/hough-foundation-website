@@ -1,9 +1,13 @@
 <template>
     <div>
         <header>
-            <div class="menu-opener" @click="menuOpener">
-                <h1>Hough Foundation</h1>
-                <IconHamburgerList></IconHamburgerList>
+            <div class="upper-header-wrapper">
+                <h1>
+                    <href url="about:blank" target="_blank">Hough Foundation</href>
+                </h1>
+                <div class="menu-opener">
+                    <IconHamburgerList @click="menuOpener"></IconHamburgerList>
+                </div>
             </div>
             <div class="menu-wrapper" v-show="isMenuOpen">
                 <div><RouterLink class="info-bar-button" @click="closeMenu" to="/">Home</RouterLink></div>

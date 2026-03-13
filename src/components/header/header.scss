@@ -1,4 +1,9 @@
 header {
+    .upper-header-wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
     .menu-opener {
         display: flex;
         justify-content: space-between;
