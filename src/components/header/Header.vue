@@ -2,11 +2,12 @@
     <div>
         <header>
             <div class="menu-opener" @click="menuOpener">
+                <h1>Hough Foundation</h1>
                 <IconHamburgerList></IconHamburgerList>
             </div>
             <div class="menu-wrapper" v-show="isMenuOpen">
-                <RouterLink class="info-bar-button" to="/">Home</RouterLink>
-                <div>About Us</div>
+                <div><RouterLink class="info-bar-button" @click="closeMenu" to="/">Home</RouterLink></div>
+                <div><RouterLink class="info-bar-button" @click="closeMenu" to="/about-us">About Us</RouterLink></div>
                 <div>Programs</div>
                 <div>Services</div>
                 <div>Get Involved</div>
@@ -31,6 +32,10 @@ const isMenuOpen = ref(false);
 
 function menuOpener() {
     isMenuOpen.value = !isMenuOpen.value;
+}
+
+function closeMenu() {
+    isMenuOpen.value = false;
 }
 </script>
 

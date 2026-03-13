@@ -1,8 +1,8 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
-import './styles/main.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/main.scss';
 import 'bootstrap';
 
 const app = createApp(App);

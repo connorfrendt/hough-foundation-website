@@ -1,0 +1,32 @@
+.about-us-header {
+    font-size: 40px;
+    color: $deep-teal;
+    padding: 20px;
+    text-align: center;
+}
+
+.section-wrapper {
+    background-color: $light-blue;
+    margin: 15px;
+    padding: 15px;
+    
+    .section-title {
+        font-size: 30px;
+    }
+    
+    .mission-vision-wrapper {
+        padding: 20px;
+
+        .wrapper {
+            padding: 10px;
+
+            .title {
+                font-size: 25px;
+            }
+        }
+    }
+    
+    .inner-paragraph {
+        padding: 10px 20px;
+    }
+}

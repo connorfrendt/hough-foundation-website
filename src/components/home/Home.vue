@@ -1,5 +1,5 @@
 <template>
-    <div>Home Page!</div>
+    <img src="../../assets/smiling-kid.jpg" />
     <GivingOptions></GivingOptions>
 </template>
 
