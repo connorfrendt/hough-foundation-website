@@ -4,4 +4,18 @@
     padding: 30px;
     display: flex;
     justify-content: space-between;
+
+    .tax-info {
+        padding: 20px 0px;
+        font-size: 12px;
+    }
+
+    .connect {
+        padding: 0 10px;
+        margin: 0 10px;
+
+        .icon-facebook {
+            margin: 10px 0px;
+        }
+    }
 }

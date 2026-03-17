@@ -1,4 +1,10 @@
-header {
+@import "@/styles/bootstrap";
+
+.desktop-header {
+    display: none;
+}
+
+.mobile-header {
     .upper-header-wrapper {
         display: flex;
         justify-content: space-between;
@@ -17,5 +23,20 @@ header {
     div {
         padding: 10px;
         color: $deep-teal;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .mobile-header {
+        display: none;
+    }
+
+    .desktop-header {
+        display: block;
+
+        .menu-wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
     }
 }

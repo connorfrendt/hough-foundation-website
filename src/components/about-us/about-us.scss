@@ -1,32 +1,68 @@
-.about-us-header {
-    font-size: 40px;
-    color: $deep-teal;
-    padding: 20px;
-    text-align: center;
-}
-
-.section-wrapper {
-    background-color: $light-blue;
-    margin: 15px;
-    padding: 15px;
+.about-us-wrapper {
+    display: flex;
+    justify-content: center;
     
-    .section-title {
-        font-size: 30px;
-    }
+    .main-inner-wrapper {
+        max-width: 1200px;
+
     
-    .mission-vision-wrapper {
-        padding: 20px;
-
-        .wrapper {
-            padding: 10px;
-
-            .title {
-                font-size: 25px;
+        .image-wrapper {
+            width: 100%;
+            height: 500px;
+            background-image: url('../../assets/about-us.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .about-us-header {
+            font-size: 40px;
+            color: $deep-teal;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .section-wrapper {
+            background-color: $light-blue;
+            margin: 15px;
+            padding: 15px;
+            
+            .section-title {
+                font-size: 30px;
+                color: $deep-teal;
+            }
+            
+            .mission-vision-wrapper {
+                padding: 20px;
+        
+                .wrapper {
+                    padding: 10px;
+        
+                    .title {
+                        font-size: 25px;
+                    }
+                }
+            }
+            
+            .inner-paragraph {
+                padding: 10px 20px;
+            }
+        
+            .board-wrapper {
+                padding: 10px;
+        
+                .board-title {
+                    font-size: 25px;
+                    color: $deep-teal;
+                }
+        
+                .board-name {
+                    font-size: 20px;
+                }
+        
+                .board-company {
+                    // padding-left: 30px;
+                }
             }
         }
-    }
-    
-    .inner-paragraph {
-        padding: 10px 20px;
     }
 }
