@@ -118,4 +118,4 @@ const boardOfDirectors = ref([
 ])
 </script>
 
-<style lang="css" src="./about-us.scss"></style>
+<style scoped lang="css" src="./about-us.scss"></style>

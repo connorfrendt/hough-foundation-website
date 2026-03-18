@@ -15,4 +15,4 @@
 
 <script setup></script>
 
-<style lang="css" src="./giving-options.scss"></style>
+<style scoped lang="css" src="./giving-options.scss"></style>

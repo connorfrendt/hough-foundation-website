@@ -37,6 +37,36 @@
         .menu-wrapper {
             display: flex;
             justify-content: space-between;
+
+            .nav-header-item {
+                padding: 10px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $golden-yellow;
+                }
+            }
+
+            .nav-item {
+                position: relative; // Needed for the dropdown to position absolutley
+                
+            }
+
+            .dropdown-menu-list {
+                position: absolute;
+                display: none;
+                top: 100%;
+                right: 0;
+                min-width: 200px;
+                z-index: 1000;
+                padding: 10px;
+                background-color: white;
+                list-style-type: none;
+            }
+
+            .nav-item:hover .dropdown-menu-list {
+                display: block;
+            }
         }
     }
 }

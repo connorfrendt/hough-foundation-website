@@ -24,7 +24,7 @@
         .section-wrapper {
             background-color: $light-blue;
             margin: 15px;
-            padding: 15px;
+            padding: 20px;
             
             .section-title {
                 font-size: 30px;
@@ -35,7 +35,7 @@
                 padding: 20px;
         
                 .wrapper {
-                    padding: 10px;
+                    padding: 10px 0;
         
                     .title {
                         font-size: 25px;
@@ -48,7 +48,7 @@
             }
         
             .board-wrapper {
-                padding: 10px;
+                padding: 10px 20px;
         
                 .board-title {
                     font-size: 25px;
@@ -60,7 +60,7 @@
                 }
         
                 .board-company {
-                    // padding-left: 30px;
+                    
                 }
             }
         }
