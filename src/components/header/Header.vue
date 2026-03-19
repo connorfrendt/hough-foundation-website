@@ -30,30 +30,44 @@
 
         <!--DESKTOP HEADER-->
         <header class="desktop-header">
-            <div>
-                <h1>
-                    <href url="about:blank" target="_blank">Hough Foundation</href>
-                </h1>
+            <div class="banner-donate">
+                <img src="../../assets/logo-horizontal-small.png" />
+                <div class="donate-button">Donate Now</div>
             </div>
             <div class="menu-wrapper">
                 <div class="nav-header-item"><RouterLink class="info-bar-button" @click="closeMenu" to="/">Home</RouterLink></div>
                 <div class="nav-header-item"><RouterLink class="info-bar-button" @click="closeMenu" to="/about-us">About Us</RouterLink></div>
-                <div class="nav-header-item">Programs</div>
-                <div class="nav-header-item">Services</div>
-                <div class="nav-header-item">
+                <div class="nav-header-item">Programs & Services</div>
+                <div class="nav-header-item nav-item">
+                    Donate
+                    <IconCaretDown></IconCaretDown>
+                    <ul class="dropdown-menu-list">
+                        <li class="nav-header-item">Different Ways to Donate</li>
+                        <li class="nav-header-item">Put in Will TODO</li>
+                        <li class="nav-header-item">Monthly Giving</li>
+                        <li class="nav-header-item">DIY Fundraising</li>
+                        <li class="nav-header-item">Estate Gifts</li>
+                        <li class="nav-header-item">Gifts of Stock and QCD</li>
+                        <li class="nav-header-item">Vehicle Donations</li>
+                        <li class="nav-header-item">Honorary Gifts</li>
+                        <li class="nav-header-item">Shopping Programs</li>
+                    </ul>
+                </div>
+                <div class="nav-header-item nav-item">
                     Get Involved
                     <IconCaretDown></IconCaretDown>
+                    <ul class="dropdown-menu-list">
+                        <li class="nav-header-item">Volunteer</li>
+                        <li class="nav-header-item">Events</li>
+                    </ul>
                 </div>
-                <div class="nav-header-item">Events</div>
-                <div class="nav-header-item">Get Engaged</div>
-                <div class="nav-header-item">Volunteer</div>
                 <div class="nav-header-item nav-item">
                     More<IconCaretDown></IconCaretDown>
                     <ul class="dropdown-menu-list">
-                        <li>Donate</li>
-                        <li>Stories & News</li>
-                        <li>Subscribe to Newsletter</li>
-                        <li>Contact Us</li>
+                        <li class="nav-header-item">Donate</li>
+                        <li class="nav-header-item">Stories & News</li>
+                        <li class="nav-header-item">Subscribe to Newsletter</li>
+                        <li class="nav-header-item">Contact Us</li>
                     </ul>
                 </div>
             </div>
