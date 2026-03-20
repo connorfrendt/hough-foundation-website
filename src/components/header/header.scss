@@ -5,25 +5,99 @@
 }
 
 .mobile-header {
-    .upper-header-wrapper {
-        display: flex;
-        justify-content: space-between;
-    }
+    position: relative;
 
-    .menu-opener {
-        display: flex;
-        justify-content: space-between;
+    .menu-wrapper {
+        // display: flex;
+        // flex-direction: row-reverse;
+        // justify-content: space-between;
+        display: block;
+        padding: 10px;
 
-        svg {
-            height: 40px;
-            width: 40px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: white;
+        z-index: 2000;
+
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        pointer-events: none;
+
+        .icon-x {
+            text-align: right;
+        }
+
+        .info-bar-button {
+            display: block;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .menu-list {
+            margin-top: 20px;
+
+            .routerlink {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+
+        .menu-item {
+            border-bottom: 1px solid #eee;
+        }
+
+        .menu-link,
+        .menu-parent {
+            display: block;
+            padding: 16px;
+            cursor: pointer;
+        }
+
+        .menu-parent {
+            font-weight: 600;
+        }
+
+        .submenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.25s ease;
+        }
+
+        .submenu.open {
+            max-height: 500px;
+        }
+
+        .submenu-item {
+            display: block;
+            padding: 12px 16px 12px 32px;
+            background: #f9f9f9;
         }
     }
 
-    div {
-        padding: 10px;
-        color: $deep-teal;
+    .menu-wrapper.open {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
     }
+
+    .upper-header-wrapper {
+
+        .banner-menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .donate-button {
+            text-align: center;
+            background-color: $light-blue;
+            padding: 10px;
+        }
+    }
+
 }
 
 @include media-breakpoint-up(md) {

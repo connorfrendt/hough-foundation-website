@@ -1,6 +1,9 @@
 <template>
-    <img src="../../assets/smiling-kid.jpg" />
-    <GivingOptions></GivingOptions>
+    <div>
+        <!-- <img src="../../assets/smiling-kid.jpg" /> -->
+        <div class="image-wrapper"></div>
+        <GivingOptions></GivingOptions>
+    </div>
 </template>
 
 <script setup>
