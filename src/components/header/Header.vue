@@ -97,7 +97,7 @@
                         :class="{ open: openIndex === index }"
                     >
                         <RouterLink
-                            class="aaaa"
+                            class="submenu-item-desktop"
                             v-for="(child, i) in item.children"
                             :key="i"
                             :to="child.to"
