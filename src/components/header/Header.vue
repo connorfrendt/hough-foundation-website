@@ -10,6 +10,7 @@
                 </div>
                 <div class="donate-button">Donate Now</div>
             </div>
+
             <div class="menu-wrapper" :class="{ open: isMenuOpen }">
                 <div class="icon-x">
                     <IconXButton @click="closeMenu"></IconXButton>
@@ -28,7 +29,7 @@
                             class="menu-parent"
                             @click="toggleDropdown(index)"
                         >
-                            {{ item.label }} <IconCaretDown></IconCaretDown>
+                            {{ item.label }} <IconCaretDown :class="{ rotate: openIndex === index }"></IconCaretDown>
                         </div>
                         
                         <!-- If it's a link -->
@@ -69,7 +70,45 @@
                 <div class="donate-button">Donate Now</div>
             </div>
             <div class="menu-wrapper">
-                <div class="nav-header-item"><RouterLink class="info-bar-button" @click="closeMenu" to="/">Home</RouterLink></div>
+                <div
+                    class="menu-list-desktop"
+                    v-for="(item, index) in menuItems"
+                    :key="index"
+                >
+                    <div
+                        class="menu-item-dropdown"
+                        v-if="item.children"
+                    >
+                        {{ item.label }} <IconCaretDown></IconCaretDown>
+                    </div>
+
+                    <RouterLink
+                        class="menu-item-non-dropdown"
+                        v-else
+                        :to="item.to"
+                        @click="closeMenu"
+                    >
+                        {{ item.label }}
+                    </RouterLink>
+
+                    <div
+                        class="submenu-desktop"
+                        v-if="item.children"
+                        :class="{ open: openIndex === index }"
+                    >
+                        <RouterLink
+                            class="aaaa"
+                            v-for="(child, i) in item.children"
+                            :key="i"
+                            :to="child.to"
+                            @click="closeMenu"
+                        >
+                            {{ child.label }}
+                        </RouterLink>
+                    </div>
+                </div>
+
+                <!-- <div class="nav-header-item"><RouterLink class="info-bar-button" @click="closeMenu" to="/">Home</RouterLink></div>
                 <div class="nav-header-item"><RouterLink class="info-bar-button" @click="closeMenu" to="/about-us">About Us</RouterLink></div>
                 <div class="nav-header-item">Programs & Services</div>
                 <div class="nav-header-item nav-item">
@@ -102,8 +141,10 @@
                         <li class="nav-header-item">Subscribe to Newsletter</li>
                         <li class="nav-header-item">Contact Us</li>
                     </ul>
-                </div>
+                </div> -->
             </div>
+
+            
         </header>
     </div>
 </template>
@@ -118,12 +159,18 @@ const isMenuOpen = ref(false);
 
 function menuOpener() {
     isMenuOpen.value = !isMenuOpen.value;
+
+    if(isMenuOpen.value) {
+        document.body.style.overflow = 'hidden';
+    }
+    else {
+        document.body.style.overflow = '';
+    }
 }
 
 function closeMenu() {
-    console.log(isMenuOpen.value);
     isMenuOpen.value = false;
-    console.log(isMenuOpen.value);
+    document.body.style.overflow = '';
 }
 
 const menuItems = ref([
@@ -133,13 +180,12 @@ const menuItems = ref([
     {
         label: 'Donate',
         children: [
-            { label: 'Home', to: '/' },
             { label: 'Different Ways to Give', to: '/donate/ways' },
             { label: 'Put in Will', to: '/donate/will' },
             { label: 'Monthly Giving', to: '/donate/monthly' },
             { label: 'DIY Fundraising', to: '/donate/diy' },
             { label: 'Estate Gifts', to: '/donate/estate' },
-            { label: 'Gifts of Stock & QCD', to: '/donate/stock' },
+            { label: 'Gifts of Stock & QCD', to: '/donate/gifts-of-stock-and-qcd' },
             { label: 'Vehicle Donations', to: '/donate/vehicle' },
             { label: 'Honorary Gifts', to: '/donate/honorary' },
             { label: 'Shopping Programs', to: '/donate/shopping' }
@@ -151,7 +197,15 @@ const menuItems = ref([
             { label: 'Volunteer', to: '/volunteer' },
             { label: 'Events', to: '/events' }
         ]
-    }
+    },
+    {
+        label: 'More',
+        children: [
+            { label: 'Subscribe to Newsletter', to: '/subscribe-to-newsletter' },
+            { label: 'Stories and News', to: '/stories-and-news' },
+            { label: 'Contact Us', to: '/contact-us' },
+        ]
+    },
 ]);
 
 const openIndex = ref(null);

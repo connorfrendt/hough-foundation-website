@@ -5,12 +5,14 @@
 }
 
 .mobile-header {
-    position: relative;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 3000;
+        background-color: white;
 
     .menu-wrapper {
-        // display: flex;
-        // flex-direction: row-reverse;
-        // justify-content: space-between;
         display: block;
         padding: 10px;
 
@@ -23,7 +25,7 @@
         z-index: 2000;
 
         opacity: 0;
-        transition: opacity 0.2s ease;
+        transition: opacity 0.25s ease;
         pointer-events: none;
 
         .icon-x {
@@ -56,8 +58,13 @@
             cursor: pointer;
         }
 
-        .menu-parent {
-            font-weight: 600;
+        .menu-parent svg {
+            // transition: transform 0.1s ease;
+            transition: transform 0.25s ease, opacity 0.25s ease;
+        }
+
+        .rotate {
+            transform: rotate(180deg);
         }
 
         .submenu {
@@ -84,6 +91,12 @@
     }
 
     .upper-header-wrapper {
+        // position: fixed;
+        // top: 0;
+        // left: 0;
+        // width: 100%;
+        // z-index: 3000;
+        // background-color: white;
 
         .banner-menu {
             display: flex;
@@ -118,40 +131,73 @@
             display: flex;
             justify-content: space-around;
             text-align: center;
+            
 
-            .nav-header-item {
+            .menu-list-desktop {
+                position: relative;
                 padding: 10px;
-                width: 100%;
-                cursor: pointer;
-                transition: 0.2s;
-                white-space: nowrap;
 
-                &:hover {
-                    background-color: $golden-yellow;
+                .submenu-desktop {
+                    display: none;
+                    min-width: 200px;
+                    position: absolute;
+                    top: 100%;
+                    right: 0;
+                    background-color: white;
+                    z-index: 1000;
+                    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+                    &:hover {
+                        background-color: #f5f5f5;
+                    }
+                    
+                    .aaaa {
+                        display: block;
+                        padding: 5px;
+
+
+                    }
                 }
-            }
 
-            .nav-item {
-                position: relative; // Needed for the dropdown to position absolutley
+                &:hover .submenu-desktop {
+                    display: block;
+                }
+
+
+            }
+            // .nav-header-item {
+            //     padding: 10px;
+            //     width: 100%;
+            //     cursor: pointer;
+            //     transition: 0.25s;
+            //     white-space: nowrap;
+
+            //     &:hover {
+            //         background-color: $golden-yellow;
+            //     }
+            // }
+
+            // .nav-item {
+            //     position: relative; // Needed for the dropdown to position absolutley
                 
-            }
+            // }
 
-            .dropdown-menu-list {
-                position: absolute;
-                display: none;
-                top: 100%;
-                left: 0;
-                min-width: 200px;
-                z-index: 1000;
-                padding: 0px;
-                background-color: white;
-                list-style-type: none;
-                text-align: left
-            }
+            // .dropdown-menu-list {
+            //     position: absolute;
+            //     display: none;
+            //     top: 100%;
+            //     left: 0;
+            //     min-width: 200px;
+            //     z-index: 1000;
+            //     padding: 0px;
+            //     background-color: white;
+            //     list-style-type: none;
+            //     text-align: left
+            // }
 
-            .nav-item:hover .dropdown-menu-list {
-                display: block;
-            }
+            // .nav-item:hover .dropdown-menu-list {
+            //     display: block;
+            // }
 
             
         }

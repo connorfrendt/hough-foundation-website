@@ -1,7 +1,32 @@
-.image-wrapper {
-    width: 100%;
-    height: 500px;
-    background-image: url('../../assets/smiling-kid.jpg');
-    background-size: cover;
-    background-position: center;
+@import "@/styles/bootstrap";
+
+.image-quote {
+    display: flex;
+    flex-direction: column;
+
+    .image-wrapper {
+        width: 100%;
+        height: 500px;
+        background-image: url('../../assets/smiling-kid.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+}
+
+@include media-breakpoint-up(md) {
+    .image-quote {
+        display: flex;
+        flex-direction: row;
+        
+        .quote {
+            background-color: $light-blue;
+            padding: 10px;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            font-size: 30px;
+            width: 100vw;
+        }
+    }
 }
