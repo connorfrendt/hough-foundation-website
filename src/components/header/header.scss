@@ -136,10 +136,21 @@
             .menu-list-desktop {
                 position: relative;
                 padding: 10px;
-                // background-color: red;
                 width: 100%;
                 white-space: nowrap;
-                transition: 0.25s ease;
+
+                .menu-item-non-dropdown,
+                .submenu-item-desktop {
+                    text-decoration: none;
+                    color: inherit;
+
+                    &:visited,
+                    &:hover,
+                    &:active {
+                        text-decoration: none;
+                        color: inherit;
+                    }
+                }
 
                 .submenu-desktop {
                     opacity: 0;
@@ -150,15 +161,18 @@
                     min-width: 200px;
                     position: absolute;
                     top: 100%;
-                    right: 0;
+                    left: 0;
                     background-color: rgb(245, 245, 245);
                     z-index: 1000;
                     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 
                     .submenu-item-desktop {
                         display: block;
-                        padding: 5px;
-                        margin: 5px;
+                        padding: 10px;
+
+                        &:hover {
+                            background-color: $golden-yellow;
+                        }
                     }
                 }
 
