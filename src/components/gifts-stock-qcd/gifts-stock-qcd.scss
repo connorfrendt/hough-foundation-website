@@ -1,0 +1,30 @@
+section {
+    padding: 10px 50px;
+
+    .main-header {
+        font-size: 40px;
+        font-weight: bold;
+        color: $deep-teal;
+    }
+    
+    .sub-main-header {
+        font-size: 28px;
+        font-weight: bold;
+        color: $deep-teal;
+    }
+    
+    .subheader {
+        font-size: 25px;
+        font-weight: bold;
+        color: $light-green;
+    }
+    
+    .mini-section-header {
+        font-size: 13px;
+        font-weight: bold;
+    }
+}
+
+hr {
+    margin: 0 50px;
+}
