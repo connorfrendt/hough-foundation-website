@@ -56,7 +56,12 @@
         <hr />
         <section>
             <div class="mini-section-header">WE'RE HERE TO HELP</div>
-            
+            <div class="sub-main-header">Questions?</div>
+            <div><b>For more information, contact</b></div>
+            <div>Michael Goodrich, AIF</div>
+            <div>Senior Investment Advisor</div>
+            <div>mgoodrich@phillipsandco.com</div>
+            <div>503.416.4668</div>
         </section>
     </div>
 </template>

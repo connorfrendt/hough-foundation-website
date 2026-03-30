@@ -5,12 +5,12 @@
 }
 
 .mobile-header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 3000;
-        background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3000;
+    background-color: white;
 
     .menu-wrapper {
         display: block;
@@ -113,6 +113,10 @@
 
 }
 
+.mobile-pad {
+    height: 157px;
+}
+
 @include media-breakpoint-up(md) {
     .bg-image {
         background-image: url(../../assets/logo-horizontal-small.png);
@@ -120,7 +124,8 @@
         background-repeat: no-repeat;
     }
 
-    .mobile-header {
+    .mobile-header,
+    .mobile-pad {
         display: none;
     }
 
