@@ -1,49 +1,136 @@
 <template>
-    <div class="programs-services-wrapper">
-        <header class="main-header">Programs & Services</header>
-        <section>
-            <header class="section-header">Family Service Center</header>
-            <div>The Family Services Center makes a difference to children and families today that are facing many challenges. These challenges can become barriers to a successful education.</div>
-            <div>Hough Foundation established the Family Services Center to meet the needs of our diverse school community. We are now proud to be partnering with the Vancouver School District and their FCRC network. When children are fed, clothed, nurtured and cared for, the whole community benefits. The Hough Foundation is designed to respond quickly and effectively to the ever changing needs of our most precious resource — children. When necessary, we offer warm clothes, coats, shoes and school supplies so children are able to go to school prepared to learn. If a family is in crisis, we are here to help. A holiday help program that meets the needs of Hough families and neighbors is offered through the Family Service Center in partnership with the faith community, individuals and businesses.</div>
-        </section>
+  <div class="page">
+    <!-- HERO -->
+    <section class="hero">
+        <h1 class="hero-title">Programs & Services</h1>
+        <p class="hero-sub">Supporting families, empowering students, strengthening community.</p>
+    </section>
 
-        <section>
-            <header>Programs:</header>
-            <div>Private Counseling for Students and Parents</div>
-            <div>Sometimes life is hard and gets in the way of living a nurturing life that allows our kids to learn and grow. If you or your child is in need of private counseling we may be able to help. Please contact our FCRC , Annette Mccabe TODO (360) 313-2107.</div>
-        </section>
+    <!-- FAMILY SERVICES -->
+    <section class="card highlight-teal">
+        <h2 class="section-title">Family Service Center</h2>
+        <p>
+            The Family Services Center supports children and families facing challenges that can become barriers to a successful education.
+        </p>
+        <p>
+            Through partnerships with the Vancouver School District and FCRC network, we respond quickly to evolving needs—providing clothing, school supplies, and crisis support when needed.
+        </p>
+    </section>
 
-        <hr />
+    <section class="card highlight-coral">
+        <h2 class="section-title">Programs</h2>
+        <p>Private Counseling for Students and Parents</p>
+        <p>Sometimes life is hard and gets in the way of living a nurturing life that allows our kids to learn and grow.  If you or your child is in need of private counseling, we may be able to help.  Please contact our FCRC:</p>
+        <p class="contact-name">Annette Mccabe</p>
+        <div class="contact-info">
+            <IconMail></IconMail>
+            <p><a href="mailto:annette.mccabe@vansd.org">annette.mccabe@vansd.org</a></p>
+        </div>
+        <div class="contact-info">
+            <IconPhone></IconPhone>
+            <p><a href="tel:+13603132107">360.313.2107</a></p>
+        </div>
+    </section>
 
-        <section>
-            <header class="section-header">After School Enrichment Programs 2025-2026:</header>
-            <div>
-                <div><b>Music Exploration</b> - Mondays, Tuesdays, Wednesdays, 3rd - 5th grades</div>
-                <div><b>Hough Choir</b> - Tuesdays, 3rd - 5th grades</div>
-                <div><b>Horticulture/Garden</b> - Thursdays or Fridays, 1st - 5th grades</div>
+    <!-- AFTER SCHOOL TABS -->
+    <section class="card highlight-green">
+        <h2 class="section-title">After School Enrichment (2025–2026)</h2>
+
+        <!-- TABS -->
+        <div class="tabs">
+            <button
+                v-for="tab in tabs"
+                :key="tab"
+                :class="['tab', { active: activeTab === tab }]"
+                @click="activeTab = tab"
+            >
+                {{ tab }}
+            </button>
+        </div>
+
+      <!-- CONTENT -->
+      <div class="tab-content">
+        <!-- PIANO -->
+            <div v-if="activeTab === 'Piano Exploration'">
+                <p>
+                    Students explore piano fundamentals through hands-on learning and creative activities. No experience required.
+                </p>
+                <span class="meta">Mondays 12:30 - 2 · Early Release</span>
+
+                <div class="video-wrapper">
+                    <iframe
+                    src="https://player.vimeo.com/video/1165796024?title=0&byline=0&portrait=0"
+                    frameborder="0"
+                    allowfullscreen
+                    ></iframe>
+                </div>
             </div>
-            <div>The Hough Foundation after-school programs start after school with a break/snack/recess time for the first half hour. Structured programs are for one hour 3- 4pm (2-3pm on early release Mondays). We will provide student supervision 2:30-3 (1:30-2 on early release Mondays) for students registered in the Hough Foundation after-school programs on their program days. During this time students will have a chance to have a break after school, before their enrichment programs start. All programs end at 4pm (3pm on early release Mondays). It is imperative that you pick your child up at this time, there is no adult supervision available after programs.</div>
-            <div>This year the Hough Foundation is offering the following after school programs.</div>
-            <div>(All days and times are subject to change.)</div>
-        </section>
-        
-        <section>
-            <header>Piano Exploration</header>
-            <div>Students will explore piano fundamentals through hands-on practice and creative musical activities. No prior experience required. Open to 3rd-5th grade students, 1 day a week. Directed by Anja Franziska.</div>
-            <div>Mondays 12:30-2pm (early release Mondays)</div>
-        </section>
 
-        <section>
-            <header>Music Exploration</header>
-            <div>Join us in the afternoon to explore musical instruments such as percussion, ukulele, band, and more! This year, we’ll offer opportunities for both advanced players and beginners. Students will have chances to perform for our school and community. As a cumulative program, consistent attendance is essential to support growth and performance readiness. Open to 3rd-5th grade students, 2 days a week. Directed by Eileen Cowen & Anja Franziska.</div>
-            <div>Tuesday and Wednesday, 2:30 - 4pm</div>
-            <div>TODO video</div>
-        </section>
+        <!-- MUSIC -->
+        <div v-if="activeTab === 'Music Exploration'">
+          <p>
+            Explore instruments like percussion, ukulele, and more. Includes performance opportunities for all skill levels.
+          </p>
+          <span class="meta">Tuesdays & Wednesdays · 2:30–4pm</span>
 
-        <section>
+          <div class="video-wrapper">
+            <iframe
+              src="https://player.vimeo.com/video/1165795552?title=0&byline=0&portrait=0"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
 
-        </section>
-    </div>
+        <!-- CHOIR -->
+        <div v-if="activeTab === 'Hough Choir'">
+          <p>
+            Join the Hough Choir and build vocal skills while performing with peers in a fun, collaborative environment.
+          </p>
+          <span class="meta">Thursdays · 2:30 - 4 · 3rd–5th Grade</span>
+
+          <div class="video-wrapper">
+            <iframe
+              src="https://player.vimeo.com/video/1165792993?title=0&byline=0&portrait=0"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- GARDEN -->
+        <div v-if="activeTab === 'Garden / Horticulture'">
+          <p>
+            Students learn about gardening, sustainability, and nature through hands-on outdoor activities.
+          </p>
+          <span class="meta">Thursdays or Fridays · 1st–5th Grade</span>
+
+          <div class="video-wrapper">
+            <iframe
+              src="https://player.vimeo.com/video/1165793516?title=0&byline=0&portrait=0"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </template>
-<script setup></script>
+
+<script setup>
+import IconMail from '@/icons/IconMail.vue';
+import IconPhone from '@/icons/IconPhone.vue';
+import { ref } from 'vue'
+
+const tabs = [
+  'Piano Exploration',
+  'Music Exploration',
+  'Hough Choir',
+  'Garden / Horticulture'
+]
+
+const activeTab = ref(tabs[0])
+</script>
+
 <style scoped lang="scss" src="./programs-services.scss"></style>
