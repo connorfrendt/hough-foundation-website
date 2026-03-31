@@ -4,6 +4,7 @@ import AboutUs from '@/components/about-us/AboutUs.vue';
 import GiftsStockQCD from '@/components/gifts-stock-qcd/GiftsStockQCD.vue';
 import VehicleDonations from '@/components/vehicle-donations/VehicleDonations.vue';
 import ProgramsServices from '@/components/programs-and-services/ProgramsServices.vue';
+import ContactUs from '@/components/contact-us/ContactUs.vue';
 
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,6 +14,7 @@ const router = createRouter({
 		{ path: '/programs-and-services', component: ProgramsServices },
 		{ path: '/donate/gifts-of-stock-and-qcd', component: GiftsStockQCD },
 		{ path: '/donate/vehicle-donations', component: VehicleDonations },
+		{ path: '/contact-us', component: ContactUs },
 		{ path: '/:pathMatch(.*)*', redirect: '/' }
 	],
 });
