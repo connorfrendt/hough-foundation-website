@@ -10,6 +10,5 @@
     svg {
         height: 20px;
         width: 20px;
-        margin-right: 20px;
     }
 </style>

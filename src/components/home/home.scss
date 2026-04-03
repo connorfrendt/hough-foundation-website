@@ -14,11 +14,86 @@
 
 }
 
+.volunteer {
+    display: flex;
+    justify-content: center;
+
+    .volunteer-content-wrapper {
+        display: flex;
+        justify-content: center;
+        max-width: 700px;
+        background: linear-gradient(135deg, $light-blue, $light-green);
+        color: $deep-teal;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        border-radius: 20px;
+        padding: 24px;
+        margin: 20px 0;
+
+        .volunteer-content {
+            // @media (min-width: 768px) {
+            //     display: flex;
+            //     flex-direction: row;
+            //     justify-content: space-between;
+            //     text-align: left;
+            // }
+    
+            .volunteer-actions {
+                display: flex;
+                justify-content: center;
+                gap: 12px;
+    
+                .btn {
+                    padding: 10px 18px;
+                    border-radius: 10px;
+                    text-decoration: none;
+                    font-weight: 600;
+                    transition: 0.2s ease;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                }
+    
+                .btn.primary {
+                    display: flex;
+                    background: white;
+                    color: $deep-teal;
+    
+                    &:hover {
+                        background: $deep-teal;
+                        color: white;
+                    }
+                }
+            }
+    
+            .volunteer-text {
+                .volunteer-title {
+                    font-size: 28px;
+                    font-weight: 700;
+                    margin-bottom: 8px;
+                    text-align: center;
+                }
+            
+                .volunteer-description {
+                    max-width: 500px;
+                    opacity: 0.9;
+                }
+        
+                .name {
+                    font-weight: bold;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+}
+
+
 @include media-breakpoint-up(md) {
     .image-quote {
         display: flex;
         flex-direction: row;
-        
+
         .quote {
             background-color: $light-blue;
             padding: 10px;
