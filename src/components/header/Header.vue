@@ -162,7 +162,7 @@ const menuItems = ref([
     {
         label: 'Get Involved',
         children: [
-            { label: 'Volunteer', to: '/volunteer' },
+            // { label: 'Volunteer', to: '/volunteer' },
             { label: 'Events', to: '/events' }
         ]
     },

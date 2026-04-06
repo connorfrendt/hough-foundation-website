@@ -1,20 +1,133 @@
-.vehicle-donation-wrapper {
-    padding: 40px;
+.page {
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: auto;
+    font-family: 'Inter', sans-serif;
+    color: $deep-teal;
+}
 
-    hr {
-        margin: 20px 0;
+.hero {
+    text-align: center;
+    margin-bottom: 40px;
+
+    .hero-title {
+        font-size: 48px;
+        font-weight: 700;
     }
-    .main-header {
-        font-size: 40px;
-        color: $deep-teal;
+
+    .hero-sub {
+        margin-top: 10px;
+        font-size: 18px;
+        opacity: 0.8;
     }
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+    font-size: 26px;
+    margin-bottom: 16px;
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.step-number {
+    background: $warm-coral;
+    color: white;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.pill-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.pill {
+    background: $light-green;
+    padding: 8px 14px;
+    border-radius: 999px;
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.location-card {
     
-    .section-header {
-        font-size: 28px;
-        color: $light-green;
+    .single-card {
+        background: $light-blue;
+        padding: 20px;
+        border-radius: 16px;
+        transition: 0.25s;
+        margin-bottom: 10px;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        }
     }
+
+    &.title-card {
+        background-color: $light-green;
+        margin-bottom: 10px;
+        border-radius: 16px;
+        padding: 10px;
+
+        .title {
+            text-align: center;
+        }
+    }
+
     
-    .sub-header {
-        font-size: 25px;
+
+    h3 {
+        margin-bottom: 6px;
     }
+
+    .sub {
+        font-weight: 600;
+        margin-top: 8px;
+    }
+
+    .alt {
+        margin-top: 16px;
+    }
+
+    .meta {
+        display: block;
+        font-size: 14px;
+        opacity: 0.7;
+        margin-top: 6px;
+    }
+}
+
+.note {
+    font-size: 14px;
+    opacity: 0.7;
 }

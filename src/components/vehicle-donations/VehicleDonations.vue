@@ -1,91 +1,128 @@
 <template>
-    <div class="vehicle-donation-wrapper">
-        <section>
-            <header class="main-header">Vehicle Donations</header>
-            <div>When you donate your car, truck, or other vehicle to the Hough Foundation, you’re making a meaningful impact in our community. Your contribution helps support vital programs, expand outreach, and create lasting positive change for those we serve. Plus, your donation may qualify you for valuable tax benefits.</div>
+    <div class="page">
+        <!-- HERO -->
+        <section class="hero">
+            <h1 class="hero-title">Vehicle Donations</h1>
+            <p class="hero-sub">Turn your unused vehicle into meaningful community impact.</p>
         </section>
-        <hr />
-        <section>
-            <header class="section-header">The Donation Process</header>
-            <div>
-                <div>Donating your vehicle is a simple and easy process. And you'll feel good knowing your donation helps families right here in our community.</div>
-                <div>To get started donating your vehicle:</div>
-                <div>
-                    <div><b>Step 1:</b> Complete our Vehicle Donation Form TODO and we'll be in touch</div>
-                    <div><b>Step 2:</b> Our towing partner will contact you to arrange a pickup and assist with the paperwork.</div>
-                    <div><b>Step 3:</b> Your vehicle will be sold at auction and the proceeds will benefit the Hough Foundation.</div>
+
+        <!-- INTRO -->
+        <section class="card">
+            <p>
+                Donating your car, truck, or other vehicle helps support vital programs, expand outreach, and create
+                lasting positive change. Plus, your donation may qualify for tax benefits.
+            </p>
+        </section>
+
+        <!-- PROCESS -->
+        <section class="card">
+            <h2 class="section-title">The Donation Process</h2>
+
+            <div class="steps">
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <p>Complete our Vehicle Donation Form (coming soon)</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <p>We arrange pickup and handle paperwork</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <p>Your vehicle is sold and proceeds support the foundation</p>
                 </div>
             </div>
-            <div>We accept cars, trucks, and other vehicles regardless of their running condition. A valid title is required to donate your vehicle. If you don’t have one, you can learn how to obtain a Quick Title from your DMV, or learn more at the links below. After the sale of your vehicle is complete, you will receive a donation receipt for your records and you may qualify for additional tax savings.</div>
-        </section>
-        <hr />
-        <section>
-            <header class="section-header">How to Acquire a Title</header>
-            <div>Titles are required for us to accept your donation. Don't have one? Don't worry! Learn more about where you can get a title in our area.</div>
+
+            <p class="note">
+                We accept most vehicles regardless of condition. A valid title is required.
+            </p>
         </section>
 
-        <section>
-            <header>Locations to Obtain a Title</header>
-            <div>Quick Titles are certificate of ownership for vehicles or boats that you can get quicker than a standard title. Quick Titles are not available for snowmobiles, vehicles or boats reported as stolen, insurance or wrecker destroyed vehicles and boats, or vehicles with a "WA rebuilt" brand on the title.</div>
-            <div>Click below for Quick Title locations in the following communities:</div>
-            <div><a href="#">Battleground</a></div>
-            <div><a href="#">Ridgefield</a></div>
-            <div><a href="#">Vancouver</a></div>
-        </section>
-        <hr />
-        <section>
-            <header class="section-header">Battle Ground</header>
-            <div class="sub-header">Battle Ground Auto License</div>
-            <div>Location</div>
-            <div>301 W Main St #101</div>
-            <div>Battle Ground, WA 98604</div>
-            <div>Hours</div>
-            <div>Monday-Friday: 10:00-4:00</div>
-            <div>Mailing Address</div>
-            <div>PO BOX 814</div>
-            <div>Battle Ground, WA 98604-0814</div>
-            <div>Phone</div>
-            <div>360.687.5115</div>
+        <!-- TITLE INFO -->
+        <section class="card">
+            <h2 class="section-title">Need a Title?</h2>
+            <p>
+                Titles are required for donation. You can obtain a Quick Title faster than a standard title at the
+                locations below.
+            </p>
+
+            <!-- <div class="pill-group">
+        <span class="pill">Battle Ground</span>
+        <span class="pill">Vancouver</span>
+        <span class="pill">Ridgefield</span>
+      </div> -->
         </section>
 
-        <section>
-            <header class="section-header">Vancouver</header>
-            <div class="sub-header">Auto License Services</div>
-            <div>Location</div>
-            <div>1301 NE 136th Ave</div>
-            <div>Vancouver, WA 98684</div>
-            <div>Quick Title Hours</div>
-            <div>Monday-Friday: 9:00-4:00</div>
-            <div>Mailing Address</div>
-            <div>PO BOX 87155</div>
-            <div>Vancouver, WA 98687-7155</div>
-            <div>Phone</div>
-            <div>360.892.1877</div>
-
-            <div class="sub-header">Clark County Auditor Auto License</div>
-            <div>Location</div>
-            <div>1408 Franklin St</div>
-            <div>Vancouver, WA 98660-2860</div>
-            <div>Hours</div>
-            <div>Monday-Friday: 9:00-4:00</div>
-            <div>Mailing Address</div>
-            <div>PO BOX 9812</div>
-            <div>Vancouver, WA 98687-7155</div>
-            <div>Phone</div>
-            <div>360.892.1877</div>
+        <!-- LOCATIONS -->
+        <section class="location-grid">
+            <div class="location-card title-card">
+                <h3 class="title">Battle Ground</h3>
+            </div>
+            <div class="location-card title-card">
+                <h3 class="title">Vancouver</h3>
+            </div>
+            <div class="location-card title-card">
+                <h3 class="title">Ridgefield</h3>
+            </div>
         </section>
 
-        <section>
-            <header class="section-header">Ridgefield</header>
-            <div class="sub-header">Ridgefield Junction Auto License</div>
-            <div>Location</div>
-            <div>7509 South 5th St Suite 101-A</div>
-            <div>Ridgefield, WA 98642</div>
-            <div>Quick Title Hours</div>
-            <div>Monday-Friday: 9:00-5:00</div>
-            <div>Saturday: 9:00-Noon</div>
-            <div>Phone</div>
-            <div>360.887.2345</div>
+        <section class="location-grid">
+            <div class="location-card">
+                <div class="single-card">
+                    <p class="sub">Battle Ground Auto License</p>
+                    <p>301 W Main St #101</p>
+                    <p>Battle Ground, WA</p>
+                    <span class="meta">Mon–Fri · 10:00–4:00</span>
+                    <span class="meta">360.687.5115</span>
+                </div>
+            </div>
+
+            <div class="location-card">
+                <div class="single-card">
+                    <p class="sub">Auto License Services</p>
+                    <p>1301 NE 136th Ave</p>
+                    <p>Vancouver, WA 98684</p>
+                    <span class="meta">Mon–Fri · 9:00–4:00</span>
+                    <span class="meta">360.892.1877</span>
+                </div>
+
+                <div class="single-card">
+                    <p class="sub alt">Clark County Auditor</p>
+                    <p>1408 Franklin St</p>
+                    <p>Vancouver, WA 98660</p>
+                    <span class="meta">Mon–Fri · 9:00–4:00</span>
+                    <span class="meta">360.397.2288</span>
+                </div>
+
+                <div class="single-card">
+                    <p class="sub alt">Hazel Dell Auto License Agency</p>
+                    <p>1503 NE 78th St Unit 10</p>
+                    <p>Vancouver, WA 98665</p>
+                    <span class="meta">Mon–Fri · 9:00–4:00</span>
+                    <span class="meta">360.574.0086</span>
+                </div>
+
+                <div class="single-card">
+                    <p class="sub alt">Orchards Auto License</p>
+                    <p>11820 NE Fourth Plain Blvd Ste D</p>
+                    <p>Vancouver, WA 98662</p>
+                    <span class="meta">Mon–Fri · 9:00–6:00</span>
+                    <span class="meta">Sat · 9:00–4:00</span>
+                    <span class="meta">360.254.6226</span>
+                </div>
+
+            </div>
+
+            <div class="location-card">
+                <div class="single-card">
+                    <p class="sub">Ridgefield Junction Auto License</p>
+                    <p>7509 S 5th St Suite 101-A</p>
+                    <p>Ridgefield, WA </p>
+                    <span class="meta">Mon–Fri · 9:00–5:00</span>
+                    <span class="meta">Sat · 9:00–Noon</span>
+                    <span class="meta">360.887.2345</span>
+                </div>
+            </div>
         </section>
     </div>
 </template>
