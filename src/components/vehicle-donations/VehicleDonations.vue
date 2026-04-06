@@ -45,29 +45,24 @@
                 Titles are required for donation. You can obtain a Quick Title faster than a standard title at the
                 locations below.
             </p>
-
-            <!-- <div class="pill-group">
-        <span class="pill">Battle Ground</span>
-        <span class="pill">Vancouver</span>
-        <span class="pill">Ridgefield</span>
-      </div> -->
         </section>
 
         <!-- LOCATIONS -->
         <section class="location-grid">
-            <div class="location-card title-card">
+            <div class="location-card title-card" @click="toggle('battle-ground')">
                 <h3 class="title">Battle Ground</h3>
             </div>
-            <div class="location-card title-card">
+            <div class="location-card title-card" @click="toggle('vancouver')">
                 <h3 class="title">Vancouver</h3>
             </div>
-            <div class="location-card title-card">
+            <div class="location-card title-card" @click="toggle('ridgefield')">
                 <h3 class="title">Ridgefield</h3>
             </div>
         </section>
 
         <section class="location-grid">
-            <div class="location-card">
+            
+            <div class="location-card" v-show="openLocation === 'battle-ground' || isDesktop">
                 <div class="single-card">
                     <p class="sub">Battle Ground Auto License</p>
                     <p>301 W Main St #101</p>
@@ -77,7 +72,7 @@
                 </div>
             </div>
 
-            <div class="location-card">
+            <div class="location-card" v-show="openLocation === 'vancouver' || isDesktop">
                 <div class="single-card">
                     <p class="sub">Auto License Services</p>
                     <p>1301 NE 136th Ave</p>
@@ -113,7 +108,7 @@
 
             </div>
 
-            <div class="location-card">
+            <div class="location-card" v-show="openLocation === 'ridgefield' || isDesktop">
                 <div class="single-card">
                     <p class="sub">Ridgefield Junction Auto License</p>
                     <p>7509 S 5th St Suite 101-A</p>
@@ -126,5 +121,28 @@
         </section>
     </div>
 </template>
-<script setup></script>
+
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue';
+const openLocation = ref(null);
+const toggle = name => {
+    openLocation.value = openLocation.value === name ? null : name
+}
+
+const isDesktop = ref(true);
+
+const checkScreen = () => {
+    isDesktop.value = window.innerWidth > 830;
+}
+
+onMounted(() => {
+    checkScreen()
+    window.addEventListener('resize', checkScreen)
+})
+
+onUnmounted(() => {
+    window.removeEventListener('resize', checkScreen)
+})
+</script>
+
 <style scoped lang="scss" src="./vehicle-donations.scss"></style>
