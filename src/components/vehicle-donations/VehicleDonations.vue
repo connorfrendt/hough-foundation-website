@@ -6,6 +6,8 @@
             <p class="hero-sub">Turn your unused vehicle into meaningful community impact.</p>
         </section>
 
+        <GivingOptions></GivingOptions>
+
         <!-- INTRO -->
         <section class="card">
             <p>
@@ -47,8 +49,91 @@
             </p>
         </section>
 
-        <!-- LOCATIONS -->
         <section class="location-grid">
+
+            <!-- Battle Ground -->
+            <div class="location-group">
+                <div class="title-card" @click="toggle('battle-ground')">
+                    <h3>Battle Ground</h3>
+                </div>
+
+                <div class="location-content" :class="{ open: openLocation === 'battle-ground' || isDesktop }">
+                    <div class="single-card">
+                        <p class="sub">Battle Ground Auto License</p>
+                        <p>301 W Main St #101</p>
+                        <p>Battle Ground, WA</p>
+                        <span class="meta">Mon–Fri · 10:00–4:00</span>
+                        <span class="meta">360.687.5115</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vancouver -->
+            <div class="location-group">
+                <div class="title-card" @click="toggle('vancouver')">
+                    <h3>Vancouver</h3>
+                </div>
+
+                <div class="location-content" :class="{ open: openLocation === 'vancouver' || isDesktop }">
+                    <!--here-->
+                    <div class="single-card">
+                        <p class="sub">Auto License Services</p>
+                        <p>1301 NE 136th Ave</p>
+                        <p>Vancouver, WA 98684</p>
+                        <span class="meta">Mon–Fri · 9:00–4:00</span>
+                        <span class="meta">360.892.1877</span>
+                    </div>
+
+                    <div class="single-card">
+                        <p class="sub alt">Clark County Auditor</p>
+                        <p>1408 Franklin St</p>
+                        <p>Vancouver, WA 98660</p>
+                        <span class="meta">Mon–Fri · 9:00–4:00</span>
+                        <span class="meta">360.397.2288</span>
+                    </div>
+
+                    <div class="single-card">
+                        <p class="sub alt">Hazel Dell Auto License Agency</p>
+                        <p>1503 NE 78th St Unit 10</p>
+                        <p>Vancouver, WA 98665</p>
+                        <span class="meta">Mon–Fri · 9:00–4:00</span>
+                        <span class="meta">360.574.0086</span>
+                    </div>
+
+                    <div class="single-card">
+                        <p class="sub alt">Orchards Auto License</p>
+                        <p>11820 NE Fourth Plain Blvd Ste D</p>
+                        <p>Vancouver, WA 98662</p>
+                        <span class="meta">Mon–Fri · 9:00–6:00</span>
+                        <span class="meta">Sat · 9:00–4:00</span>
+                        <span class="meta">360.254.6226</span>
+                    </div>
+                    <!--here-->
+                </div>
+            </div>
+
+            <!-- Ridgefield -->
+            <div class="location-group">
+                <div class="title-card" @click="toggle('ridgefield')">
+                    <h3>Ridgefield</h3>
+                </div>
+
+                <div class="location-content" :class="{ open: openLocation === 'ridgefield' || isDesktop }">
+                    <div class="single-card">
+                        <p class="sub">Ridgefield Junction Auto License</p>
+                        <p>7509 S 5th St Suite 101-A</p>
+                        <p>Ridgefield, WA</p>
+                        <span class="meta">Mon–Fri · 9:00–5:00</span>
+                        <span class="meta">Sat · 9:00–Noon</span>
+                        <span class="meta">360.887.2345</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- LOCATIONS -->
+        <!-- <section class="location-grid">
             <div class="location-card title-card" @click="toggle('battle-ground')">
                 <h3 class="title">Battle Ground</h3>
             </div>
@@ -58,9 +143,9 @@
             <div class="location-card title-card" @click="toggle('ridgefield')">
                 <h3 class="title">Ridgefield</h3>
             </div>
-        </section>
+        </section> -->
 
-        <section class="location-grid">
+        <!-- <section class="location-grid">
             
             <div class="location-card" v-show="openLocation === 'battle-ground' || isDesktop">
                 <div class="single-card">
@@ -118,12 +203,13 @@
                     <span class="meta">360.887.2345</span>
                 </div>
             </div>
-        </section>
+        </section> -->
     </div>
 </template>
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
+import GivingOptions from '../giving-options/GivingOptions.vue';
 const openLocation = ref(null);
 const toggle = name => {
     openLocation.value = openLocation.value === name ? null : name

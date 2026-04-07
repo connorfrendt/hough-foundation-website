@@ -1,8 +1,6 @@
 <template>
     <div class="giving-options-wrapper">
-        <div>
-            <h2>Giving Options</h2>
-        </div>
+        <h2>Giving Options</h2>
         <div class="donation-options-wrapper">
             <button class="giving-button">$25</button>
             <button class="giving-button">$50</button>

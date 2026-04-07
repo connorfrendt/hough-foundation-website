@@ -6,6 +6,8 @@
         <p class="hero-sub">Supporting families, empowering students, strengthening community.</p>
     </section>
 
+    <GivingOptions></GivingOptions>
+
     <!-- FAMILY SERVICES -->
     <section class="card highlight-teal">
         <h2 class="section-title">Family Service Center</h2>
@@ -122,6 +124,7 @@
 import IconMail from '@/icons/IconMail.vue';
 import IconPhone from '@/icons/IconPhone.vue';
 import { ref } from 'vue'
+import GivingOptions from '../giving-options/GivingOptions.vue';
 
 const tabs = [
   'Piano Exploration',

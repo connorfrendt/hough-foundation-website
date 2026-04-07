@@ -1,10 +1,22 @@
 .giving-options-wrapper {
     background-color: $warm-coral;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
     color: $deep-teal;
     padding: 5px;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-radius: 16px;
+
+    @media (max-width: 767px) {
+        flex-direction: column;
+    }
+
+    h2 {
+        padding: 0;
+        margin: 0;
+    }
 
     .donation-options-wrapper {
         display: flex;
