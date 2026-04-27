@@ -160,20 +160,21 @@ const menuItems = ref([
         ]
     },
     {
-        label: 'Get Involved',
-        children: [
-            // { label: 'Volunteer', to: '/volunteer' },
-            { label: 'Events', to: '/events' }
-        ]
+        label: 'Volunteer', to: '/volunteer'
+        // children: [
+        //     { label: 'Volunteer', to: '/volunteer' },
+        //     { label: 'Events', to: '/events' }
+        // ]
     },
-    {
-        label: 'More',
-        children: [
-            { label: 'Subscribe to Newsletter', to: '/subscribe-to-newsletter' },
-            { label: 'Stories and News', to: '/stories-and-news' },
-            { label: 'Contact Us', to: '/contact-us' },
-        ]
-    },
+    { label: 'Events', to: '/events' },
+    // {
+    //     label: 'More',
+    //     children: [
+    //         { label: 'Subscribe to Newsletter', to: '/subscribe-to-newsletter' },
+    //         { label: 'Stories and News', to: '/stories-and-news' },
+    //     ]
+    // },
+    { label: 'Contact Us', to: '/contact-us' },
 ]);
 
 const openIndex = ref(null);
