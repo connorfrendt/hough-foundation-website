@@ -20,7 +20,8 @@
     </section>
 
     <section class="card highlight-coral">
-        <h2 class="section-title">Programs</h2>
+        <!-- <h2 class="section-title">Programs</h2> -->
+        <!-- TODO: make all one section -->
         <p>Private Counseling for Students and Parents</p>
         <p>Sometimes life is hard and gets in the way of living a nurturing life that allows our kids to learn and grow.  If you or your child is in need of private counseling, we may be able to help.  Please contact our FCRC:</p>
         <p class="contact-name">Annette Mccabe</p>
@@ -36,7 +37,7 @@
 
     <!-- AFTER SCHOOL TABS -->
     <section class="card highlight-green">
-        <h2 class="section-title">After School Enrichment (2025–2026)</h2>
+        <h2 class="section-title">After School Enrichment Programs (2025–2026)</h2>
 
         <!-- TABS -->
         <div class="tabs">

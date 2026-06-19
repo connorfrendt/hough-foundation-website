@@ -67,52 +67,51 @@
 
         <!--DESKTOP HEADER-->
         <header class="desktop-header">
-            <div class="banner-donate">
-                <img src="../../assets/logo-horizontal-small.png" />
-                <div class="donate-button">Donate Now</div>
-            </div>
-            <div class="menu-wrapper">
-                <div
-                    class="menu-list-desktop"
-                    v-for="(item, index) in menuItems"
-                    :key="index"
-                >
-                    <div
-                        class="menu-item-dropdown"
-                        v-if="item.children"
-                    >
-                        {{ item.label }} <IconCaretDown></IconCaretDown>
-                    </div>
+            <div class="header-row">
+                <img class="logo" src="../../assets/logo-horizontal-small.png" />
 
-                    <RouterLink
-                        class="menu-item-non-dropdown"
-                        v-else
-                        :to="item.to"
-                        @click="closeMenu"
-                    >
-                        {{ item.label }}
-                    </RouterLink>
-
+                <div class="menu-wrapper">
                     <div
-                        class="submenu-desktop"
-                        v-if="item.children"
-                        :class="{ open: openIndex === index }"
+                        class="menu-list-desktop"
+                        v-for="(item, index) in menuItems"
+                        :key="index"
                     >
+                        <div
+                            class="menu-item-dropdown"
+                            v-if="item.children"
+                        >
+                            {{ item.label }} <IconCaretDown></IconCaretDown>
+                        </div>
+
                         <RouterLink
-                            class="submenu-item-desktop"
-                            v-for="(child, i) in item.children"
-                            :key="i"
-                            :to="child.to"
+                            class="menu-item-non-dropdown"
+                            v-else
+                            :to="item.to"
                             @click="closeMenu"
                         >
-                            {{ child.label }}
+                            {{ item.label }}
                         </RouterLink>
+
+                        <div
+                            class="submenu-desktop"
+                            v-if="item.children"
+                            :class="{ open: openIndex === index }"
+                        >
+                            <RouterLink
+                                class="submenu-item-desktop"
+                                v-for="(child, i) in item.children"
+                                :key="i"
+                                :to="child.to"
+                                @click="closeMenu"
+                            >
+                                {{ child.label }}
+                            </RouterLink>
+                        </div>
                     </div>
                 </div>
 
+                <div class="donate-button">Donate Now</div>
             </div>
-
-            
         </header>
     </div>
 </template>
@@ -148,32 +147,19 @@ const menuItems = ref([
     {
         label: 'Donate',
         children: [
-            { label: 'Different Ways to Give', to: '/donate/ways' },
-            { label: 'Put in Will', to: '/donate/will' },
             { label: 'Monthly Giving', to: '/donate/monthly' },
             { label: 'DIY Fundraising', to: '/donate/diy' },
             { label: 'Estate Gifts', to: '/donate/estate' },
             { label: 'Gifts of Stock & QCD', to: '/donate/gifts-of-stock-and-qcd' },
-            { label: 'Vehicle Donations', to: '/donate/vehicle-donations' },
+            // { label: 'Vehicle Donations', to: '/donate/vehicle-donations' },
             { label: 'Honorary Gifts', to: '/donate/honorary' },
-            { label: 'Shopping Programs', to: '/donate/shopping' }
+            { label: 'Shopping Programs', to: '/donate/shopping' },
+            { label: 'Business Cashback', to: '/' },
+            { label: 'Legacy Giving', to: '/' },
         ]
     },
-    {
-        label: 'Volunteer', to: '/volunteer'
-        // children: [
-        //     { label: 'Volunteer', to: '/volunteer' },
-        //     { label: 'Events', to: '/events' }
-        // ]
-    },
+    { label: 'Volunteer', to: '/volunteer' },
     { label: 'Events', to: '/events' },
-    // {
-    //     label: 'More',
-    //     children: [
-    //         { label: 'Subscribe to Newsletter', to: '/subscribe-to-newsletter' },
-    //         { label: 'Stories and News', to: '/stories-and-news' },
-    //     ]
-    // },
     { label: 'Contact Us', to: '/contact-us' },
 ]);
 

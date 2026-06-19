@@ -1,4 +1,5 @@
 @import "@/styles/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@550&display=swap');
 
 .desktop-header {
     display: none;
@@ -49,6 +50,9 @@
 
         .menu-item {
             border-bottom: 1px solid #eee;
+            font-family: "Oswald", sans-serif;
+            font-size: 22px;
+            color: $sea-blue;
         }
 
         .menu-link,
@@ -111,7 +115,7 @@
     height: 157px;
 }
 
-@include media-breakpoint-up(md) {
+@include media-breakpoint-up(xl) {
     .bg-image {
         background-image: url(../../assets/logo-horizontal-small.png);
         height: 208px;
@@ -126,28 +130,44 @@
     .desktop-header {
         display: block;
 
+        .header-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            flex-shrink: 0;
+        }
+
         .menu-wrapper {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             text-align: center;
-            
+            flex: 1;
 
             .menu-list-desktop {
                 position: relative;
                 padding: 10px;
-                width: 100%;
                 white-space: nowrap;
+                border-bottom: 2px solid transparent;
+                transition: border-bottom-color 0.25s ease;
+
+                .menu-item-dropdown,
+                .menu-item-non-dropdown {
+                    font-family: "Oswald", sans-serif;
+                    font-size: 22px;
+                    color: $sea-blue;
+                }
 
                 .menu-item-non-dropdown,
                 .submenu-item-desktop {
                     text-decoration: none;
-                    color: inherit;
 
                     &:visited,
                     &:hover,
                     &:active {
                         text-decoration: none;
-                        color: inherit;
                     }
                 }
 
@@ -175,8 +195,9 @@
                     }
                 }
 
-                &:hover {
-                    background-color: rgb(245, 245, 245);
+                &:hover,
+                &:has(.router-link-exact-active) {
+                    border-bottom: 2px solid $sea-blue;
                     cursor: pointer;
                 }
 
@@ -188,18 +209,12 @@
             }
         }
 
-        .banner-donate {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            .donate-button {
-                background-color: $golden-yellow;
-                border-radius: 5px;
-                padding: 10px;
-                white-space: nowrap;
-                margin-right: 10px;
-            }
+        .donate-button {
+            background-color: $golden-yellow;
+            border-radius: 5px;
+            padding: 10px;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
     }
 }

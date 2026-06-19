@@ -7,6 +7,10 @@
                 <div>Suite 200</div>
                 <div>Vancouver, WA 98660</div>
                 <div>(360) 992-7060</div>
+                <div style="padding: 10px 0;">
+                    <div>Jill Campbell - Executive Director</div>
+                    <div>(360) 901-0132</div>
+                </div>
             </div>
             <div class="tax-info">
                 <!-- <div>Registered 501(c)(3)</div>
