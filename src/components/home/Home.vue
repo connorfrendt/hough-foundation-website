@@ -7,11 +7,13 @@
         </div>
 
         <GivingOptions></GivingOptions>
+        <GallerySlider></GallerySlider>
     </div>
 </template>
 
 <script setup>
 import GivingOptions from '../giving-options/GivingOptions.vue';
+import GallerySlider from '../gallery-slider/GallerySlider.vue';
 </script>
 
 <style scoped lang="scss" src="./home.scss"></style>
