@@ -24,8 +24,8 @@
                 </div>
             </div>
 
-            <button class="slider-arrow prev" aria-label="Previous slide" @click="prev">&#8249;</button>
-            <button class="slider-arrow next" aria-label="Next slide" @click="next">&#8250;</button>
+            <button class="slider-arrow prev" aria-label="Previous slide" @click="prev"><span class="arrow-glyph">&#8249;</span></button>
+            <button class="slider-arrow next" aria-label="Next slide" @click="next"><span class="arrow-glyph">&#8250;</span></button>
 
             <div class="slider-dashes">
                 <button v-for="(image, i) in images" :key="'dash-' + image.src" class="dash"
@@ -162,6 +162,7 @@ function stopAutoplay() {
 }
 
 function resetAutoplayTimer() {
+    if (lightboxOpen.value) return; // don't let a stray mouseleave revive it while open
     startAutoplay();
 }
 
@@ -383,12 +384,18 @@ onUnmounted(() => {
     border: none;
     background: rgba(0, 0, 0, 0.35);
     color: #fff;
-    font-size: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: background 150ms ease, transform 150ms ease;
+}
+
+.arrow-glyph {
+    display: block;
+    font-size: 50px;
+    transform: translate(1px, -6px);
+    line-height: 1;
 }
 
 .slider-arrow:hover {

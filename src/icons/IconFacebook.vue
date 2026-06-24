@@ -17,7 +17,7 @@
         color: white;
     }
     svg:hover {
-        color: red;
+        color: #0866ff;
     }
 }
 </style>
