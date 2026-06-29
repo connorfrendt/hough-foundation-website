@@ -17,9 +17,9 @@
         <p>
             Through partnerships with the Vancouver School District and FCRC network, we respond quickly to evolving needs—providing clothing, school supplies, and crisis support when needed.
         </p>
-    </section>
+    <!-- </section>
 
-    <section class="card highlight-coral">
+    <section class="card highlight-coral"> -->
         <!-- <h2 class="section-title">Programs</h2> -->
         <!-- TODO: make all one section -->
         <p>Private Counseling for Students and Parents</p>
