@@ -84,14 +84,14 @@
                     text-align: center;
 
                     .board-title {
-                        font-size: 20px;
+                        font-size: 18px;
                         color: $deep-teal;
                         margin-bottom: 5px;
                         font-weight: 600;
                     }
 
                     .board-name {
-                        font-size: 18px;
+                        font-size: 20px;
                         font-weight: 500;
                         margin-bottom: 3px;
                     }
@@ -99,6 +99,10 @@
                     .board-company {
                         font-size: 16px;
                         color: $light-green;
+                    }
+
+                    .board-image {
+                        height: 50px;
                     }
                 }
             }

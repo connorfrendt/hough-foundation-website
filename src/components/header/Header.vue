@@ -158,7 +158,7 @@ const menuItems = ref([
             { label: 'Legacy Giving', to: '/' },
         ]
     },
-    { label: 'Volunteer', to: '/volunteer' },
+    { label: 'Get Involved', to: '/get-involved' },
     { label: 'Events', to: '/events' },
     { label: 'Contact Us', to: '/contact-us' },
 ]);

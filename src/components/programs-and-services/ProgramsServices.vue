@@ -37,7 +37,7 @@
 
     <!-- AFTER SCHOOL TABS -->
     <section class="card highlight-green">
-        <h2 class="section-title">After School Enrichment Programs (2025–2026)</h2>
+        <h2 class="section-title">After School Enrichment Programs (2025-2026)</h2>
 
         <!-- TABS -->
         <div class="tabs">

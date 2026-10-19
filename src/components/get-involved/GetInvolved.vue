@@ -44,4 +44,4 @@ import IconMail from '@/icons/IconMail.vue';
 import IconPhone from '@/icons/IconPhone.vue';
 </script>
 
-<style scoped lang="scss" src="./volunteer.scss"></style>
+<style scoped lang="scss" src="./get-involved.scss"></style>
