@@ -7,13 +7,13 @@
         </div>
 
         <GivingOptions></GivingOptions>
-        <GallerySlider></GallerySlider>
+        <UpcomingEvents></UpcomingEvents>
     </div>
 </template>
 
 <script setup>
 import GivingOptions from '../giving-options/GivingOptions.vue';
-import GallerySlider from '../gallery-slider/GallerySlider.vue';
+import UpcomingEvents from '../upcoming-events/UpcomingEvents.vue';
 </script>
 
 <style scoped lang="scss" src="./home.scss"></style>

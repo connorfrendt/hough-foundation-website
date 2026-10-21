@@ -2,7 +2,7 @@
     <div class="gallery-slider-wrapper">
 
         <!-- Dev controls panel — remove this in production, it's just for comparing modes -->
-        <div class="controls-panel">
+        <div v-if="showControls" class="controls-panel">
             <div class="group">
                 <strong>Transition:</strong>
                 <label><input type="radio" value="slide" v-model="transitionMode"> Slide</label>
@@ -19,7 +19,7 @@
             @pointerdown="onPointerDown" @pointermove="onPointerMove" @pointerup="onPointerUp"
             @pointerleave="onPointerLeave" @mouseenter="stopAutoplay" @mouseleave="resetAutoplayTimer">
             <div class="slider-track" :class="{ transition: !isDragging }" :style="trackStyle">
-                <div v-for="(image, i) in images" :key="image.src" class="slide" :class="{ active: i === currentIndex }">
+                <div v-for="(image, i) in images" :key="i" class="slide" :class="{ active: i === currentIndex }">
                     <img :src="image.src" :alt="image.alt" draggable="false" />
                 </div>
             </div>
@@ -28,7 +28,7 @@
             <button class="slider-arrow next" aria-label="Next slide" @click="next"><span class="arrow-glyph">&#8250;</span></button>
 
             <div class="slider-dashes">
-                <button v-for="(image, i) in images" :key="'dash-' + image.src" class="dash"
+                <button v-for="(image, i) in images" :key="'dash-' + i" class="dash"
                     :class="{ active: i === currentIndex }" :aria-label="'Go to slide ' + (i + 1)"
                     @click="goTo(i)"></button>
             </div>
@@ -59,18 +59,18 @@
 import { ref, computed, onMounted, onUnmounted, watch } from "vue";
 
 // ----------------------------------------------------------
-// 1. CONFIG — swap these for your own images, or pass as props
+// 1. CONFIG — images are passed in by the parent as
+//    [{ src, alt }, ...]. showControls turns on the dev panel.
 // ----------------------------------------------------------
-const images = ref([
-    { src: "https://picsum.photos/id/1015/1600/900", alt: "Mountain river valley" },
-    { src: "https://picsum.photos/id/1018/1600/900", alt: "Forest lake at dawn" },
-    { src: "https://picsum.photos/id/1025/1600/900", alt: "Dog portrait" },
-    { src: "https://picsum.photos/id/1039/1600/900", alt: "Alpine lake" },
-    { src: "https://picsum.photos/id/1043/1600/900", alt: "Desert road" },
-]);
+const props = defineProps({
+    images: { type: Array, required: true },
+    showControls: { type: Boolean, default: false },
+});
+
+const images = computed(() => props.images);
 
 const AUTOPLAY_INTERVAL_MS = 4000;
-const slideCount = images.value.length;
+const slideCount = computed(() => images.value.length);
 
 // ----------------------------------------------------------
 // 2. STATE — reactive refs instead of plain `let` variables.
@@ -97,7 +97,8 @@ let autoplayTimer = null;
 //    Vue handles that the instant currentIndex.value changes.
 // ----------------------------------------------------------
 function goTo(index) {
-    currentIndex.value = ((index % slideCount) + slideCount) % slideCount;
+    const count = slideCount.value;
+    currentIndex.value = ((index % count) + count) % count;
     resetAutoplayTimer();
 }
 
@@ -271,9 +272,10 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
+/* Parents can override size/shape with these CSS variables */
 .gallery-slider-wrapper {
     width: 100%;
-    max-width: 900px;
+    max-width: var(--slider-max-width, 900px);
     margin: 0 auto;
 }
 
@@ -313,9 +315,9 @@ onUnmounted(() => {
 .gallery-slider {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: var(--slider-aspect-ratio, 16 / 9);
     overflow: hidden;
-    border-radius: 4px;
+    border-radius: var(--slider-border-radius, 4px);
     background: #0a0a0a;
     touch-action: pan-y;
     cursor: grab;
