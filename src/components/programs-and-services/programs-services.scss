@@ -54,30 +54,44 @@
     margin-bottom: 16px;
 }
 
-/* TABS */
+/* TABS — browser-style: the active tab joins the content panel below it */
+$tab-border: 1px solid rgba($deep-teal, 0.3);
+
 .tabs {
     display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
 }
 
 .tab {
-  padding: 10px 16px;
-  border-radius: 999px;
-  border: none;
-  background: $light-blue;
-  cursor: pointer;
-  transition: 0.2s;
+    flex: 1 1 0; // equal widths: 4 tabs = 25% each
+    min-width: 0;
+    padding: 12px 8px;
+    border: $tab-border;
+    border-radius: 0;
+    background: $light-blue;
+    color: $deep-teal;
+    cursor: pointer;
+    transition: background 0.2s;
 
-  &.active {
-    background: $warm-coral;
-    color: white;
-  }
+    // Neighbors share one border instead of doubling up
+    & + .tab {
+        border-left: none;
+    }
 
-  &:hover {
-    background: $golden-yellow;
-  }
+    &:hover:not(.active) {
+        background: $golden-yellow;
+    }
+
+    &.active {
+        background: white;
+        font-weight: 600;
+        border-bottom-color: transparent;
+    }
+}
+
+.tab-content {
+    border: $tab-border;
+    border-top: none;
+    padding: 20px;
 }
 
 .meta {
