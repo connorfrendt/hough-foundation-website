@@ -1,0 +1,40 @@
+/* TABS — browser-style: the active tab joins the content panel below it.
+   Shared by About Us and Programs & Services; @import into a component's scss. */
+$tab-border: 1px solid rgba($deep-teal, 0.3);
+
+.tabs {
+    display: flex;
+}
+
+.tab {
+    flex: 1 1 0; // equal widths, however many tabs there are
+    min-width: 0;
+    padding: 12px 8px;
+    border: $tab-border;
+    border-radius: 0;
+    background: $light-blue;
+    color: $deep-teal;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    // Neighbors share one border instead of doubling up
+    & + .tab {
+        border-left: none;
+    }
+
+    &:hover:not(.active) {
+        background: $golden-yellow;
+    }
+
+    &.active {
+        background: white;
+        font-weight: 600;
+        border-bottom-color: transparent;
+    }
+}
+
+.tab-content {
+    border: $tab-border;
+    border-top: none;
+    padding: 20px;
+}

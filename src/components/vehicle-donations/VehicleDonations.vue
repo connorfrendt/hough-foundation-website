@@ -218,7 +218,8 @@ const toggle = name => {
 const isDesktop = ref(true);
 
 const checkScreen = () => {
-    isDesktop.value = window.innerWidth > 830;
+    // Matches Bootstrap's md breakpoint used in vehicle-donations.scss
+    isDesktop.value = window.innerWidth >= 768;
 }
 
 onMounted(() => {

@@ -1,3 +1,5 @@
+@import "@/styles/bootstrap";
+
 .page {
     padding: 40px 20px;
     max-width: 1100px;
@@ -74,11 +76,11 @@
 
 .location-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: 20px;
-    
-    @media (max-width: 830px) {
-        grid-template-columns: 1fr;
+
+    @include media-breakpoint-up(md) {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -98,10 +100,16 @@
             margin: 0;
         }
 
-        @media (max-width: 830px) {
-            cursor: pointer;
+        // Clickable accordion header on mobile only
+        cursor: pointer;
+        &:hover {
+            background-color: $golden-yellow;
+        }
+
+        @include media-breakpoint-up(md) {
+            cursor: default;
             &:hover {
-                background-color: $golden-yellow;
+                background-color: $light-green;
             }
         }
     }
@@ -122,8 +130,8 @@
     opacity: 1;
 }
 
-@media (min-width: 831px) {
-    .locatio-content {
+@include media-breakpoint-up(md) {
+    .location-content {
         max-height: none !important;
         opacity: 1 !important;
     }

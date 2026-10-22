@@ -1,3 +1,6 @@
+@import "@/styles/bootstrap";
+@import "@/styles/tabs";
+
 .about-us-wrapper {
     display: flex;
     justify-content: center;
@@ -25,6 +28,35 @@
             margin-bottom: 40px;
         }
 
+        // Round the outer corners of the tab strip + panel
+        .tabs {
+            .tab:first-child {
+                border-top-left-radius: 12px;
+            }
+
+            .tab:last-child {
+                border-top-right-radius: 12px;
+            }
+
+            // h2-sized titles on desktop; default button size on mobile
+            @include media-breakpoint-up(md) {
+                .tab {
+                    @include font-size($h2-font-size);
+                }
+            }
+        }
+
+        .tab-content {
+            margin-bottom: 30px;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+
+            // Last section inside a tab doesn't need extra space below it
+            .section-wrapper:last-child {
+                margin-bottom: 0;
+            }
+        }
+
         .section-wrapper {
             background-color: $light-blue;
             margin-bottom: 30px;
@@ -42,6 +74,13 @@
                 display: flex;
                 flex-wrap: wrap;
                 gap: 20px;
+
+                // Stacked on mobile, side-by-side from md up
+                flex-direction: column;
+
+                @include media-breakpoint-up(md) {
+                    flex-direction: row;
+                }
 
                 .card {
                     flex: 1 1 45%;
