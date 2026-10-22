@@ -1,3 +1,5 @@
+@import "@/styles/bootstrap";
+
 .page {
     padding: 40px 20px;
     max-width: 1100px;
@@ -62,7 +64,7 @@ $tab-border: 1px solid rgba($deep-teal, 0.3);
 }
 
 .tab {
-    flex: 1 1 0; // equal widths: 4 tabs = 25% each
+    flex: 1 1 0; // equal widths, however many tabs there are
     min-width: 0;
     padding: 12px 8px;
     border: $tab-border;
@@ -94,11 +96,107 @@ $tab-border: 1px solid rgba($deep-teal, 0.3);
     padding: 20px;
 }
 
-.meta {
-  display: block;
-  margin: 10px 0 20px;
-  font-size: 14px;
-  opacity: 0.7;
+/* MOBILE DROPDOWN — a single tab that opens a list of all tabs */
+.tabs-dropdown {
+    display: none;
+    position: relative;
+
+    .dropdown-toggle-tab {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 16px;
+        font-weight: 600;
+
+        // Matches the base .tab hover selector so this wins over golden yellow
+        &:hover:not(.active) {
+            background: rgba($light-blue, 1.0);
+        }
+    }
+
+    .dropdown-arrow {
+        color: black;
+        font-size: 12px;
+        transition: transform 0.2s;
+
+        &.open {
+            transform: rotate(180deg);
+        }
+    }
+
+    // Floats over the content so the page doesn't jump when it opens
+    .dropdown-list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        // $light-blue is semi-transparent, so give the tabs a solid base
+        // to sit on — otherwise the content below shows through
+        background: white;
+
+        .tab {
+            text-align: left;
+            padding: 12px 16px;
+            border-bottom: $tab-border;
+
+            // Stacked vertically, so share top/bottom borders instead of left/right
+            & + .tab {
+                border-left: $tab-border;
+                border-top: none;
+            }
+
+            &.active {
+                border-bottom: $tab-border;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .tabs {
+        display: none;
+    }
+
+    .tabs-dropdown {
+        display: block;
+    }
+}
+
+/* PROGRAM SCHEDULE — sessions sit side-by-side, stacking on mobile */
+.sessions {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+
+    .session {
+        flex: 1 1 0;
+        background: $golden-yellow;
+        border-radius: 12px;
+        padding: 16px 20px;
+
+        p {
+            margin-bottom: 4px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.description {
+    text-align: center;
+}
+
+@include media-breakpoint-down(md) {
+    .sessions {
+        flex-direction: column;
+    }
 }
 
 /* RESPONSIVE VIDEO */
