@@ -159,7 +159,14 @@ const menuItems = ref([
         ]
     },
     { label: 'Get Involved', to: '/get-involved' },
-    { label: 'Events', to: '/events' },
+    {
+        label: 'Events',
+        children: [
+            { label: 'Sip-n-Stroll 2026', to: '/'},
+            { label: 'Hoedown 2027', to: '/'},
+        ]
+    },
+
     { label: 'Contact Us', to: '/contact-us' },
 ]);
 
