@@ -8,7 +8,7 @@
 
     <GivingOptions></GivingOptions>
 
-    
+    <!--Seedling and Outdoor are underneath Horticulture-->
 
     <!-- AFTER SCHOOL TABS -->
     <section class="card highlight-green">

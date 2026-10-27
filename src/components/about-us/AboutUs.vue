@@ -85,7 +85,7 @@
                     </p>
                     <p class="inner-paragraph">
                         Mental Health is an area of focus for the Hough Foundation.
-                        We connect and pay for many students and families to receive
+                        We connect and pay for students and families to receive
                         mental health resources in the community as well.
                     </p>
                     <p class="inner-paragraph">
@@ -105,6 +105,7 @@
                         high school.
                     </p>
                 </section>
+                <!-- VIDEOS HERE -->
             </div>
 
             <!-- COMMUNITY SUPPORT TAB -->

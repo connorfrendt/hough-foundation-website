@@ -147,13 +147,12 @@ const menuItems = ref([
     {
         label: 'Donate',
         children: [
+            { label: 'Testimonials', to: '/'},
             { label: 'Monthly Giving', to: '/donate/monthly' },
             { label: 'DIY Fundraising', to: '/donate/diy' },
             { label: 'Estate Gifts', to: '/donate/estate' },
             { label: 'Gifts of Stock & QCD', to: '/donate/gifts-of-stock-and-qcd' },
-            // { label: 'Vehicle Donations', to: '/donate/vehicle-donations' },
             { label: 'Honorary Gifts', to: '/donate/honorary' },
-            { label: 'Shopping Programs', to: '/donate/shopping' },
             { label: 'Business Cashback', to: '/' },
             { label: 'Legacy Giving', to: '/' },
         ]
