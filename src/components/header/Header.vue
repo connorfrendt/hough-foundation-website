@@ -142,12 +142,18 @@ function closeMenu() {
 
 const menuItems = ref([
     { label: 'Home', to: '/' },
-    { label: 'About Us', to: '/about-us' },
+    {
+        label: 'About Us',
+        children: [
+            { label: 'Who We Are', to: '/about-us/who-we-are' },
+            { label: 'Our Team', to: '/about-us/our-team' },
+            { label: 'Testimonials', to: '/' },
+        ]
+    },
     { label: 'Programs & Services', to: '/programs-and-services' },
     {
         label: 'Donate',
         children: [
-            { label: 'Testimonials', to: '/'},
             { label: 'Monthly Giving', to: '/donate/monthly' },
             { label: 'DIY Fundraising', to: '/donate/diy' },
             { label: 'Estate Gifts', to: '/donate/estate' },
