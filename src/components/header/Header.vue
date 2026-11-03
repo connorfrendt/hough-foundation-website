@@ -171,7 +171,6 @@ const menuItems = ref([
             { label: 'Hoedown 2027', to: '/'},
         ]
     },
-
     { label: 'Contact Us', to: '/contact-us' },
 ]);
 
